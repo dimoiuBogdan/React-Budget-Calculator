@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import AddExpense from "./COMPONENTS/AddExpense";
+import BalanceDetails from "./COMPONENTS/BalanceDetails";
+import DarkModeToggler from "./COMPONENTS/DarkModeToggler";
+import History from "./COMPONENTS/History";
 
-function App() {
+export default function App() {
+  const [transactions, setTransactions] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen w-screen flex justify-center dark:bg-gray-600">
+      <DarkModeToggler />
+      <div className="container w-1/3 dark:text-white pt-10">
+        <h2 className="text-5xl mb-12 text-center">Expense Tracker</h2>
+        <BalanceDetails />
+        <AddExpense
+          setTransactions={setTransactions}
+          transactions={transactions}
+        />
+        <History
+          transactions={transactions}
+          setTransactions={setTransactions}
+        />
+      </div>
     </div>
   );
 }
-
-export default App;
