@@ -15,7 +15,7 @@ export default function AddExpense(props) {
   };
 
   const addNewTransaction = () => {
-    if (newTransactionAmount && newTransactionText)
+    if (newTransactionAmount && newTransactionText) {
       setTransactions([
         {
           text: newTransactionText,
@@ -23,8 +23,9 @@ export default function AddExpense(props) {
         },
         ...transactions,
       ]);
-    setNewTransactionAmount(0);
-    setNewTransactionText("");
+      setNewTransactionAmount(0);
+      setNewTransactionText("");
+    }
   };
 
   return (
