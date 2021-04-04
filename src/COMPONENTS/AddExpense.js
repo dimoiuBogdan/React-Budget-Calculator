@@ -17,11 +17,11 @@ export default function AddExpense(props) {
   const addNewTransaction = () => {
     if (newTransactionAmount && newTransactionText)
       setTransactions([
-        ...transactions,
         {
           text: newTransactionText,
           amount: newTransactionAmount,
         },
+        ...transactions,
       ]);
     setNewTransactionAmount(0);
     setNewTransactionText("");

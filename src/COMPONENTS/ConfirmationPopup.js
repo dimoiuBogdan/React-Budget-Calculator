@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function ConfirmationPopup(props) {
   const {
@@ -6,7 +6,7 @@ export default function ConfirmationPopup(props) {
     transactions,
     id,
     setDisplayPopup,
-    displayPopup,
+    clickedExpenseDetails,
   } = props;
 
   const deleteTransaction = () => {
@@ -15,13 +15,17 @@ export default function ConfirmationPopup(props) {
         (clickedElement) => transactions.indexOf(clickedElement) !== id
       )
     );
+    setDisplayPopup(false);
   };
 
   return (
     <div className="top-0 left-0 bg-black bg-opacity-30 w-screen h-screen fixed flex items-center justify-center flex-col">
-      <div className="p-3 text-center bg-gray-600 border-2 rounded-md border-gray-400">
+      <div className="p-3 text-center bg-white dark:bg-gray-600 border-2 rounded-md border-gray-400">
         <h3 className="text-xl mb-2">
-          Delete Transaction "Car" worth "-300$"?
+          Delete {clickedExpenseDetails.amount < 0 ? "Expense" : "Income"} "
+          {clickedExpenseDetails.text}" Worth "
+          {clickedExpenseDetails.amount > 0 ? "+" : null}
+          {clickedExpenseDetails.amount}$" ?
         </h3>
         <div>
           <button
