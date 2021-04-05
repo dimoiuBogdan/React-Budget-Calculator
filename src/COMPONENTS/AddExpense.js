@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../index.css";
 
 export default function AddExpense(props) {
   const { setTransactions, transactions } = props;
@@ -33,8 +32,8 @@ export default function AddExpense(props) {
       <h2 className="text-2xl mb-4 pb-3 border-b-2 border-gray-300">
         Add New Transaction
       </h2>
-      <div className="px-8 flex justify-evenly items-center text-center">
-        <div>
+      <div className="px-0 flex justify-evenly items-center text-center flex-row">
+        <div className="pr-2">
           <label htmlFor="text" className="text-xl block mb-2">
             Text
           </label>
@@ -46,22 +45,14 @@ export default function AddExpense(props) {
             onChange={changeTransactionText}
           />
         </div>
-        <div className="amount-label">
+        <div className="amount-label pl-2">
           <label htmlFor="text" className="text-xl block mb-2 relative">
             Amount
-            <div className="text-md absolute left-full -top-full w-48 border-2 border-gray-300 bg-white dark:bg-gray-600 rounded-md p-2 opacity-0 transition-all duration-300">
-              <div>
-                <span className="text-red-400">Negative</span> - Expense
-              </div>
-              <div>
-                <span className="text-green-400">Positive</span> - Income
-              </div>
-            </div>
           </label>
           <input
             value={newTransactionAmount ? newTransactionAmount : ""}
             type="number"
-            placeholder="Money spent / earned"
+            placeholder="Enter Price ..."
             className="w-full py-1 bg-gray-50 bg-opacity-0 focus:outline-none border-b-2 border-opacity-50 border-gray-300"
             onChange={changeTransactionAmount}
           />

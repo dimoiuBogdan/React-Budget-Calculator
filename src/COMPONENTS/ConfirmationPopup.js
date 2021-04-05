@@ -24,7 +24,7 @@ export default function ConfirmationPopup(props) {
         className="top-0 left-0 bg-black bg-opacity-30 w-screen h-screen fixed flex items-center justify-center flex-col"
         onClick={() => setDisplayPopup(false)}
       ></div>
-      <div className="p-3 text-center bg-white dark:bg-gray-600 border-2 rounded-md border-gray-400 z-10 fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+      <div className="p-3 w-11/12 sm:w-max text-center bg-white dark:bg-gray-600 border-2 rounded-md border-gray-400 z-10 fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
         <h3 className="text-xl mb-2">
           Delete {clickedExpenseDetails.amount < 0 ? "Expense" : "Income"} "
           {clickedExpenseDetails.text}" Worth "

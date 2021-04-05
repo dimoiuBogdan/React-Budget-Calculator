@@ -12,6 +12,7 @@ export default function App() {
 
   useEffect(() => {
     recalculateBalance();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [transactions]);
 
   const recalculateBalance = () => {
@@ -32,8 +33,8 @@ export default function App() {
   return (
     <div className="min-h-screen max-w-screen flex justify-center dark:bg-gray-600">
       <DarkModeToggler />
-      <div className="container w-1/3 dark:text-white pt-10">
-        <h2 className="text-5xl mb-12 text-center">Expense Tracker</h2>
+      <div className="container dark:text-white px-5 pt-10 sm:w-full md:w-4/5 lg:w-2/3 xl:w-1/3">
+        <h2 className="text-4xl mb-6 text-center">Expense Tracker</h2>
         <BalanceDetails
           totalBalance={totalBalance}
           income={income}

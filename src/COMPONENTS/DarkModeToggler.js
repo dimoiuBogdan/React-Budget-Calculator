@@ -5,6 +5,7 @@ export default function DarkModeToggler() {
 
   useEffect(() => {
     toggleDarkMode();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const toggleDarkMode = () => {
@@ -18,7 +19,7 @@ export default function DarkModeToggler() {
     <div>
       <button
         onClick={toggleDarkMode}
-        className="text-4xl absolute top-5 right-10 focus:outline-none"
+        className="text-4xl absolute top-2 right-5 focus:outline-none"
       >
         {isDarkMode ? (
           <i className="far fa-sun text-indigo-400"></i>
